@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # CSV name you want to compare with master list
 # Change this if you want to check a new file extensin must be comma separated csv
 # Do not include file extension, missing IPs will be saved as file-missing.csv
-fileName = 'GRQM-Groningen-The_Netherlands'
+fileName = ''
 
 # Master list you want to use with all the IPs that are currently being monitored
 IPMasterList = 'IP-Master-List'
@@ -47,7 +47,7 @@ ListNodes = pd.read_csv(INPlist + '.csv')
 ListNodes.set_index("IP Address", inplace= True)
 
 #print(data.index)
-#print(data.index.str.contains('10.105.7.45'))
+#print(data.index.str.contains(''))
 #print(data)
 
 data = pd.DataFrame()
@@ -58,7 +58,7 @@ print('Comparing lists...')
 
 # Hostname of IPs that don't match
 hostname = ''
-# OS from rapid 7
+# OS from scanner
 OS = ''
 
 # Iterate through list of assets in the new csv
@@ -87,7 +87,7 @@ for i in range(len(newAssets.index)):
                 break
     # If there is not a match append the IP to data which is the list that will be exported
     if match != True:
-        data = data.append([{"Address":scannedIP,"Rapid7 HostName":hostname,"Rapid7 OS":OS}])
+        data = data.append([{"Address":scannedIP,"Scanned HostName":hostname,"Scanned OS":OS}])
 
 
 print('\nSample of missing IPs...\n')

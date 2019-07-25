@@ -8,8 +8,9 @@ nm = nmap.PortScanner() # instantiate nmap.PortScanner object
 # Open the CSV file
 f = open('nmap.csv','wb')
 
-# If you want to do a pingsweep on network 10.13.32.0/24:
-scanned_Data = nm.scan(hosts='10.13.32.0/24', arguments='-n -sP -PE -PA')
+# If you want to do a pingsweep on network *.*.*.*/24:
+# Change IP in next line to subnet you want to scan
+scanned_Data = nm.scan(hosts='IP/24', arguments='-n -sP -PE -PA')
 
 
 # Open the CSV file

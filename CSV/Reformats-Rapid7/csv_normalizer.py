@@ -74,7 +74,7 @@ data.set_index("Name", inplace= True)
 # print(data.iloc[10])
 
 #print(data.index)
-#print(data.index.str.contains('10.105.7.45'))
+#print(data.index.str.contains(''))
 #print(data)
 
 # Iterate through list of assets in the new csv
